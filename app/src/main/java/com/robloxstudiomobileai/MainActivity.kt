@@ -152,7 +152,7 @@ class MainActivity : ComponentActivity() {
     private fun ToolButton(label: String, action: () -> Unit) {
         Button(
             onClick = action,
-            modifier = Modifier.weight(1f),
+            modifier = Modifier.width(76.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Panel),
             contentPadding = PaddingValues(horizontal = 4.dp, vertical = 8.dp)
         ) { Text(label, color = White, fontSize = 10.sp) }
