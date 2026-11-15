@@ -1,6 +1,8 @@
 package com.robloxstudiomobileai
 
 import android.os.Bundle
+import android.content.Intent
+import android.net.Uri
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -109,7 +111,13 @@ fun StudioMobileApp() {
                 modifier = Modifier.fillMaxSize().padding(14.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                Header(currentFileName)
+                Header(currentFileName) {
+                    runCatching {
+                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://create.roblox.com")))
+                    }.onFailure {
+                        output = "Não foi possível abrir o Creator Hub: ${it.message ?: "erro desconhecido"}"
+                    }
+                }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     TopTab("Editor", selectedTab == "Editor") { selectedTab = "Editor" }
                     TopTab("Explorer", selectedTab == "Explorer") { selectedTab = "Explorer" }
@@ -178,7 +186,7 @@ private fun inspectLuauText(source: String): String {
 }
 
 @Composable
-private fun Header(fileName: String) {
+private fun Header(fileName: String, onOpenCreatorHub: () -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -188,6 +196,14 @@ private fun Header(fileName: String) {
             Text("STUDIO MOBILE", color = Accent, fontSize = 11.sp, fontWeight = FontWeight.Bold)
             Text("Roblox Studio Mobile AI", color = White, fontSize = 19.sp, fontWeight = FontWeight.Bold)
             Text(fileName, color = Muted, fontSize = 10.sp)
+            Spacer(Modifier.height(5.dp))
+            Text(
+                "ABRIR CREATOR HUB ↗",
+                color = Accent,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.clickable(onClick = onOpenCreatorHub)
+            )
         }
         Box(
             modifier = Modifier.size(42.dp).background(Panel2, RoundedCornerShape(12.dp)),
