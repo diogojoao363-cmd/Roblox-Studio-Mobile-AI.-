@@ -1,27 +1,26 @@
 # Roblox Studio Mobile AI
 
-Aplicativo Android em desenvolvimento para criar e organizar projetos Roblox pelo celular.
+Editor experimental de criação 3D para navegador e Android.
 
-## Baixar o APK
+## 🌐 Abrir o editor online
 
-**[TOQUE AQUI PARA BAIXAR O APK](https://github.com/diogojoao363-cmd/Roblox-Studio-Mobile-AI.-/releases/download/mobile-ai-latest/Roblox-Studio-Mobile-AI.apk)**
+**[ABRIR ROBLOX STUDIO MOBILE AI](https://diogojoao363-cmd.github.io/Roblox-Studio-Mobile-AI.-/)**
 
-Se o link ainda não abrir, aguarde a compilação em **Actions** terminar. O arquivo é atualizado automaticamente quando uma nova versão é compilada na branch `main`.
+A primeira publicação pode levar alguns minutos depois que o GitHub Pages concluir a implantação.
 
-No Android, após baixar, abra o arquivo APK e confirme a instalação. Se o Android pedir autorização para instalar apps dessa fonte, permita somente para o navegador ou gerenciador de arquivos que você usou para baixar.
+## 📲 Baixar o APK Android
 
-## Estado atual
+[Baixar APK de depuração](https://github.com/diogojoao363-cmd/Roblox-Studio-Mobile-AI.-/releases/download/mobile-ai-latest/Roblox-Studio-Mobile-AI.apk)
 
-- Interface Android nativa com Jetpack Compose.
-- Editor 3D inicial em WebView com Three.js.
-- Ferramentas básicas para adicionar formas e objetos.
-- Comandos locais para gerar estruturas simples, como labirinto e casa.
-- Atalho para o Creator Hub da Roblox.
+## Recursos atuais
+
+- Cena 3D interativa com rotação e zoom.
+- Adição de blocos, esferas, cilindros, pisos e paredes.
+- Comandos locais para gerar uma casa ou labirinto.
+- Interface adaptada para celular e computador.
 
 ## Limitações
 
-Este projeto independente não é o Roblox Studio oficial e ainda não possui todas as funções do Studio, execução completa de Luau, sincronização de projetos ou publicação automática de experiências. A cena 3D usa Three.js e requer internet para carregar a biblioteca.
+Este projeto é independente e não é o Roblox Studio oficial. O construtor atual reconhece um conjunto limitado de comandos locais; ainda não é uma IA generativa conectada. Não inclui execução completa de Luau, sincronização de projetos ou publicação automática de experiências Roblox. A cena usa Three.js via CDN e precisa de internet.
 
-A integração futura deve usar serviços e formatos oficiais da Roblox, autenticação segura e permissões mínimas. Não coloque tokens, senhas ou chaves de API no código do aplicativo ou neste repositório.
-
-O APK disponibilizado é uma compilação de depuração para testes, não uma versão publicada na Play Store.
+Não insira senhas, tokens ou chaves privadas no site ou no repositório.
